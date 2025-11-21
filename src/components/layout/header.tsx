@@ -21,13 +21,13 @@ export default function Header() {
   const navItems = [
     { label: t("nav.home"), href: "/" },
     { label: t("nav.about"), href: "#about" },
-    { label: t("nav.myservices"), href: "#services" },
-    { label: t("nav.videos"), href: "#videos" },
-    { label: t("nav.contactme"), href: "#contact" }
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.portfolio"), href: "#portfolio" },
+    { label: t("nav.contact"), href: "#contact" }
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200/50 bg-white/80 shadow-sm backdrop-blur-md transition-all duration-300">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/95 shadow-sm backdrop-blur-md transition-all duration-300">
       {/* Main Header */}
       <div className="layout">
         <div className="flex h-16 items-center justify-between lg:h-20">
@@ -75,7 +75,7 @@ export default function Header() {
 
             <div className="flex items-center">
               <Button
-                className="bg-primary hidden h-auto items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl has-[>svg]:px-6 lg:flex"
+                className="hidden h-auto items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-xl has-[>svg]:px-6 lg:flex"
                 asChild
               >
                 <Link
@@ -141,7 +141,7 @@ export default function Header() {
           transition={{ duration: 0.3 }}
           className="overflow-hidden lg:hidden"
         >
-          <nav className="space-y-4 border-t border-gray-200 py-4">
+          <nav className="space-y-4 border-t border-border py-4">
             <div className="space-y-4 px-4">
               {navItems.map((item, index) => (
                 <m.div
@@ -168,7 +168,7 @@ export default function Header() {
                 className="border-t pt-4"
               >
                 <Button
-                  className="bg-primary h-auto w-full items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl has-[>svg]:px-6"
+                  className="h-auto w-full items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-xl has-[>svg]:px-6"
                   asChild
                 >
                   <a

@@ -13,7 +13,7 @@ type indexProps = {
 };
 
 export default function Logo({
-  src = "/images/logos/1.png",
+  src = "/images/logo.png",
   width = 192,
   height = 148,
   className,
@@ -36,7 +36,7 @@ export default function Logo({
         height={height}
         placeholder="empty"
         priority
-        alt="ALEF Real Estate Logo"
+        alt="Logo"
       />
     </I18nLink>
   );

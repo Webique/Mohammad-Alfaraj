@@ -17,20 +17,20 @@
     "backToHome": "Back to home"
   },
   "LocaleLayout": {
-    "name": "Abdullah Omar | Photographer & Creative Producer",
-    "short_name": "Abdullah Omar",
-    "description": "Abdullah Omar - Professional photographer and creative producer. We offer commercial reels, product photography, event coverage, and portrait photography services.",
+    "name": "Mohammed Al Faraj Photography | Professional Drone Photographer & Cameraman",
+    "short_name": "Mohammed Al Faraj",
+    "description": "GACA-certified commercial drone pilot specializing in aerial photography, videography, and ground cinematography. Serving major clients including Saudi Aramco, Ministry of Defence, and Saudi League.",
     "keywords": [
-      "Abdullah Omar",
-      "Photographer",
-      "Professional Photography",
-      "Product Photography",
-      "Commercial Photography",
-      "Event Photography",
-      "Portrait Photography",
-      "Reels",
-      "Visual Content",
-      "Saudi Photographer"
+      "Mohammed Al Faraj",
+      "Drone Photography",
+      "Aerial Photography",
+      "GACA Certified",
+      "Commercial Drone Pilot",
+      "Videography",
+      "Saudi Arabia",
+      "Eastern Province",
+      "Industrial Photography",
+      "Construction Documentation"
     ]
   },
   "LocaleSwitcher": {
@@ -49,8 +49,8 @@
       "contactme": "Contact Me"
     },
     "cta": "Book Now",
-    "siteName": "Abdullah Omar",
-    "siteDescription": "Photographer & Creative Producer"
+    "siteName": "Mohammed Al Faraj",
+    "siteDescription": "Professional Drone Photographer"
   },
   "Footer": {
     "home": "Home",
@@ -65,17 +65,142 @@
     "phone": "Phone",
     "email": "Email",
     "location": "Location",
-    "copyright": "© {year} Abdullah Omar. All rights reserved",
-    "companyDescription": "Professional photographer and creative producer passionate about capturing visuals that tell stories and reflect true identity.",
-    "marketing": "Commercial Photography",
-    "development": "Product Photography",
+    "copyright": "© {year} Mohammed Al Faraj Photography. All rights reserved",
+    "companyDescription": "GACA-certified commercial drone pilot delivering high-quality aerial imaging solutions with technical precision and cinematic vision.",
+    "marketing": "Aerial Photography",
+    "development": "Industrial Documentation",
     "consulting": "Event Coverage",
-    "saudiArabia": "Kingdom of Saudi Arabia",
+    "saudiArabia": "Eastern Province, Saudi Arabia",
     "available24_7": "Available 24/7",
     "socialMedia": {
       "instagram": "Instagram",
-      "tiktok": "TikTok",
+      "linkedin": "LinkedIn",
       "email": "Email"
+    }
+  },
+  "LandingPage": {
+    "hero": {
+      "title": "Professional Drone Photography",
+      "subtitle": "GACA-Certified Commercial Pilot",
+      "description": "Delivering high-quality aerial imaging solutions with technical precision and cinematic vision across Saudi Arabia's Eastern Province",
+      "cta": "View Portfolio",
+      "ctaSecondary": "Contact Us",
+      "certificate": "Freelancer Certificate: FL-479717920"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Excellence in Aerial Imaging",
+      "description": "Based in the heart of Saudi Arabia's Eastern Province, Mohammed Al Faraj is a leading provider of professional drone photography and videography services. With extensive operational experience and full GACA commercial authorization, we deliver high-quality aerial imaging solutions that meet the highest standards of safety, compliance, and creativity.",
+      "mission": "Our work blends technical precision with cinematic vision, enabling us to support major industries including energy, construction, infrastructure, logistics, defense, and media production."
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive Aerial Solutions",
+      "items": {
+        "aerial": {
+          "title": "Aerial Drone Photography & Videography",
+          "description": "4K/5.1K cinema-quality imaging with D-log M-log"
+        },
+        "industrial": {
+          "title": "Industrial Site Documentation",
+          "description": "Comprehensive documentation for energy and industrial sectors"
+        },
+        "construction": {
+          "title": "Construction Progress Monitoring",
+          "description": "Regular site monitoring and progress tracking"
+        },
+        "corporate": {
+          "title": "Corporate Films & Promotional Videos",
+          "description": "Professional corporate media production"
+        },
+        "maritime": {
+          "title": "Maritime & Port Operations",
+          "description": "Specialized coverage for ports and marine facilities"
+        },
+        "survey": {
+          "title": "Survey-Grade Aerial Footage",
+          "description": "High-resolution visual documentation"
+        },
+        "architectural": {
+          "title": "Landscape & Architectural Shots",
+          "description": "Stunning high-resolution photography"
+        },
+        "events": {
+          "title": "Event Coverage",
+          "description": "Government, corporate, and sports events"
+        },
+        "ground": {
+          "title": "Ground Cinematography",
+          "description": "Professional video production and filming"
+        },
+        "streaming": {
+          "title": "Live Streaming",
+          "description": "High-tech RC pro with HDMI output"
+        }
+      }
+    },
+    "clients": {
+      "title": "Major Clients",
+      "subtitle": "Trusted by Industry Leaders",
+      "description": "We proudly deliver services to leading national and international entities across the Kingdom",
+      "list": [
+        "Saudi Aramco",
+        "Tamimi Global",
+        "Chinese Contracting Company",
+        "Ministry of Defence & Aviation",
+        "Dammam Seaport",
+        "Saudi League (ROSHN)",
+        "Batterjee Medical College",
+        "Prince Sultan Cultural Center"
+      ]
+    },
+    "why": {
+      "title": "Why Choose Us",
+      "subtitle": "Professional Excellence",
+      "items": {
+        "certified": {
+          "title": "GACA-Certified",
+          "description": "Commercial drone pilot with full authorization"
+        },
+        "equipment": {
+          "title": "High-End Equipment",
+          "description": "4K/5.1K cinema-quality drone & camera systems"
+        },
+        "experience": {
+          "title": "Industry Experience",
+          "description": "Proven track record in high-security & industrial sites"
+        },
+        "turnaround": {
+          "title": "Fast Turnaround",
+          "description": "Quick delivery with professional editing"
+        },
+        "compliance": {
+          "title": "Full Compliance",
+          "description": "Understanding of corporate & government requirements"
+        },
+        "insured": {
+          "title": "Fully Insured",
+          "description": "Authorized for commercial operations"
+        }
+      }
+    },
+    "coverage": {
+      "title": "Service Coverage",
+      "subtitle": "Eastern Province & Beyond",
+      "description": "We primarily operate across the Eastern Province, with availability for projects across Saudi Arabia upon request",
+      "areas": "Dammam • Dhahran • Al Khobar • Jubail • Qatif • Ras Tanura"
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "subtitle": "Let's Discuss Your Project",
+      "description": "Ready to elevate your project with professional aerial imaging? Contact us today for a consultation.",
+      "form": {
+        "name": "Your Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "message": "Project Details",
+        "submit": "Send Message"
+      }
     }
   }
 }
