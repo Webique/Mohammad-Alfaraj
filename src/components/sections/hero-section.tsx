@@ -24,7 +24,7 @@ export default function HeroSection() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        <div className="bg-linear-to-b absolute inset-0 from-black/70 via-black/50 to-black/70" />
+        <div className="bg-linear-to-b absolute inset-0 from-black/50 via-black/30 to-black/50" />
       </div>
 
       {/* Content */}
