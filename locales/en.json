@@ -1,0 +1,81 @@
+{
+  "IndexPage": {
+    "WhatsAppFloat": {
+      "tooltip": "Contact us via WhatsApp"
+    }
+  },
+  "Error": {
+    "title": "Sorry, an unexpected error occurred!",
+    "description": "<p>We apologize for this error we encountered.</p><p>You can try <retry>reloading the page</retry> you were visiting.</p>"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Sorry, please check the address bar in your browser or use the navigation to go to a known page.",
+    "retryButton": "Try again",
+    "contactSupport": "Contact support",
+    "goBack": "Go back",
+    "backToHome": "Back to home"
+  },
+  "LocaleLayout": {
+    "name": "Abdullah Omar | Photographer & Creative Producer",
+    "short_name": "Abdullah Omar",
+    "description": "Abdullah Omar - Professional photographer and creative producer. We offer commercial reels, product photography, event coverage, and portrait photography services.",
+    "keywords": [
+      "Abdullah Omar",
+      "Photographer",
+      "Professional Photography",
+      "Product Photography",
+      "Commercial Photography",
+      "Event Photography",
+      "Portrait Photography",
+      "Reels",
+      "Visual Content",
+      "Saudi Photographer"
+    ]
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ar {🇸🇦 Arabic} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "myservices": "My Services",
+      "portfolio": "Portfolio",
+      "videos": "Videos",
+      "contact": "Contact",
+      "contactme": "Contact Me"
+    },
+    "cta": "Book Now",
+    "siteName": "Abdullah Omar",
+    "siteDescription": "Photographer & Creative Producer"
+  },
+  "Footer": {
+    "home": "Home",
+    "about": "About",
+    "myservices": "My Services",
+    "contactme": "Contact Me",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contactUs": "Contact",
+    "connectWithUs": "Connect With Us",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "copyright": "© {year} Abdullah Omar. All rights reserved",
+    "companyDescription": "Professional photographer and creative producer passionate about capturing visuals that tell stories and reflect true identity.",
+    "marketing": "Commercial Photography",
+    "development": "Product Photography",
+    "consulting": "Event Coverage",
+    "saudiArabia": "Kingdom of Saudi Arabia",
+    "available24_7": "Available 24/7",
+    "socialMedia": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "email": "Email"
+    }
+  }
+}
