@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export default function HeroSection() {
-  const t = useTranslations("LandingPage.hero");
+  const t = useTranslations("IndexPage.hero");
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">

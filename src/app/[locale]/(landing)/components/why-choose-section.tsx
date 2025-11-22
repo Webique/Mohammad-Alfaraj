@@ -21,7 +21,7 @@ const featureIcons = {
 };
 
 export default function WhyChooseSection() {
-  const t = useTranslations("LandingPage.why");
+  const t = useTranslations("IndexPage.why");
 
   const features = Object.keys(featureIcons) as Array<
     keyof typeof featureIcons

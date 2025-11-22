@@ -29,7 +29,7 @@ const serviceIcons = {
 };
 
 export default function ServicesSection() {
-  const t = useTranslations("LandingPage.services");
+  const t = useTranslations("IndexPage.services");
 
   const services = Object.keys(serviceIcons) as Array<
     keyof typeof serviceIcons

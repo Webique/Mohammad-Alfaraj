@@ -33,7 +33,7 @@ export default function Header() {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.myservices"), href: "#services" },
     { label: t("nav.myportfolio"), href: "#portfolio" },
-    { label: t("nav.contactme"), href: "#cta" }
+    { label: t("nav.contactme"), href: "#contact" }
   ];
 
   return (

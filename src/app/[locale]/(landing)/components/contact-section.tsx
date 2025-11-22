@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export default function ContactSection() {
-  const t = useTranslations("LandingPage.contact");
+  const t = useTranslations("IndexPage.contact");
 
   return (
     <section id="contact" className="bg-muted relative overflow-hidden py-32">

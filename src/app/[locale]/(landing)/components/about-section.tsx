@@ -6,7 +6,7 @@ import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
 
 export default function AboutSection() {
-  const t = useTranslations("LandingPage.about");
+  const t = useTranslations("IndexPage.about");
 
   return (
     <section id="about" className="bg-muted relative overflow-hidden py-40">

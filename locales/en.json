@@ -2,81 +2,7 @@
   "IndexPage": {
     "WhatsAppFloat": {
       "tooltip": "Contact us via WhatsApp"
-    }
-  },
-  "Error": {
-    "title": "Sorry, an unexpected error occurred!",
-    "description": "<p>We apologize for this error we encountered.</p><p>You can try <retry>reloading the page</retry> you were visiting.</p>"
-  },
-  "NotFoundPage": {
-    "title": "Page not found",
-    "description": "Sorry, please check the address bar in your browser or use the navigation to go to a known page.",
-    "retryButton": "Try again",
-    "contactSupport": "Contact support",
-    "goBack": "Go back",
-    "backToHome": "Back to home"
-  },
-  "LocaleLayout": {
-    "name": "Mohammed Al Faraj Photography | Professional Drone Photographer & Cameraman",
-    "short_name": "Mohammed Al Faraj",
-    "description": "GACA-certified commercial drone pilot specializing in aerial photography, videography, and ground cinematography. Serving major clients including Saudi Aramco, Ministry of Defence, and Saudi League.",
-    "keywords": [
-      "Mohammed Al Faraj",
-      "Drone Photography",
-      "Aerial Photography",
-      "GACA Certified",
-      "Commercial Drone Pilot",
-      "Videography",
-      "Saudi Arabia",
-      "Eastern Province",
-      "Industrial Photography",
-      "Construction Documentation"
-    ]
-  },
-  "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, ar {🇸🇦 Arabic} en {🇺🇸 English} other {Unknown}}"
-  },
-  "Header": {
-    "nav": {
-      "home": "Home",
-      "about": "About",
-      "services": "Services",
-      "myservices": "My Services",
-      "myportfolio": "My Portfolio",
-      "contactme": "Contact Me"
     },
-    "cta": "Book Now",
-    "siteName": "Mohammed Al Faraj",
-    "siteDescription": "Professional Drone Photographer"
-  },
-  "Footer": {
-    "home": "Home",
-    "about": "About",
-    "myservices": "My Services",
-    "contactme": "Contact Me",
-    "quickLinks": "Quick Links",
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "contactUs": "Contact",
-    "connectWithUs": "Connect With Us",
-    "phone": "Phone",
-    "email": "Email",
-    "location": "Location",
-    "copyright": "© {year} Mohammed Al Faraj Photography. All rights reserved",
-    "companyDescription": "GACA-certified commercial drone pilot delivering high-quality aerial imaging solutions with technical precision and cinematic vision.",
-    "marketing": "Aerial Photography",
-    "development": "Industrial Documentation",
-    "consulting": "Event Coverage",
-    "saudiArabia": "Eastern Province, Saudi Arabia",
-    "available24_7": "Available 24/7",
-    "socialMedia": {
-      "instagram": "Instagram",
-      "linkedin": "LinkedIn",
-      "email": "Email"
-    }
-  },
-  "LandingPage": {
     "hero": {
       "title": "Professional Drone Photography",
       "subtitle": "GACA-Certified Commercial Pilot",
@@ -200,5 +126,81 @@
         "submit": "Send Message"
       }
     }
+
+  },
+  "Error": {
+    "title": "Sorry, an unexpected error occurred!",
+    "description": "<p>We apologize for this error we encountered.</p><p>You can try <retry>reloading the page</retry> you were visiting.</p>"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Sorry, please check the address bar in your browser or use the navigation to go to a known page.",
+    "retryButton": "Try again",
+    "contactSupport": "Contact support",
+    "goBack": "Go back",
+    "backToHome": "Back to home"
+  },
+  "LocaleLayout": {
+    "name": "Mohammed Al Faraj Photography | Professional Drone Photographer & Cameraman",
+    "short_name": "Mohammed Al Faraj",
+    "description": "GACA-certified commercial drone pilot specializing in aerial photography, videography, and ground cinematography. Serving major clients including Saudi Aramco, Ministry of Defence, and Saudi League.",
+    "keywords": [
+      "Mohammed Al Faraj",
+      "Drone Photography",
+      "Aerial Photography",
+      "GACA Certified",
+      "Commercial Drone Pilot",
+      "Videography",
+      "Saudi Arabia",
+      "Eastern Province",
+      "Industrial Photography",
+      "Construction Documentation"
+    ]
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ar {🇸🇦 Arabic} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "myservices": "My Services",
+      "myportfolio": "My Portfolio",
+      "contactme": "Contact Me"
+    },
+    "cta": "Book Now",
+    "siteName": "Mohammed Al Faraj",
+    "siteDescription": "Professional Drone Photographer"
+  },
+  "Footer": {
+    "home": "Home",
+    "about": "About",
+    "myservices": "My Services",
+    "services": "Services",
+    "myportfolio": "My Portfolio",
+    "contactme": "Contact Me",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact",
+    "connectWithMe": "Connect With Me",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "copyright": "© {year} Mohammed Al Faraj Photography. All rights reserved",
+    "companyDescription": "GACA-certified commercial drone pilot delivering high-quality aerial imaging solutions with technical precision and cinematic vision.",
+    "marketing": "Aerial Photography",
+    "development": "Industrial Documentation",
+    "consulting": "Event Coverage",
+    "saudiArabia": "Eastern Province, Saudi Arabia",
+    "available24_7": "Available 24/7",
+    "socialMedia": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "email": "Email",
+      "whatsapp": "WhatsApp"
+    },
+    "gacaCertified": "GACA Certified",
+    "certificateNumber": "FL-479717920"
   }
 }

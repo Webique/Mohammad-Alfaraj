@@ -5,7 +5,7 @@ import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 export default function CoverageSection() {
-  const t = useTranslations("LandingPage.coverage");
+  const t = useTranslations("IndexPage.coverage");
 
   return (
     <section className="bg-secondary text-secondary-foreground relative overflow-hidden py-24">
@@ -65,8 +65,8 @@ export default function CoverageSection() {
             className="border-primary/30 bg-primary/15 relative overflow-hidden rounded-3xl border-2 p-10 shadow-2xl backdrop-blur-md"
           >
             {/* Decorative elements */}
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
+            <div className="bg-primary/10 absolute -right-10 -top-10 h-40 w-40 rounded-full blur-2xl" />
+            <div className="bg-primary/10 absolute -bottom-10 -left-10 h-40 w-40 rounded-full blur-2xl" />
 
             <div className="relative z-10">
               <div className="mb-6 flex items-center justify-center gap-3">
@@ -82,7 +82,11 @@ export default function CoverageSection() {
           {/* Additional info cards */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { icon: MapPin, label: "Eastern Province", desc: "Primary Coverage" },
+              {
+                icon: MapPin,
+                label: "Eastern Province",
+                desc: "Primary Coverage"
+              },
               { icon: Navigation, label: "Nationwide", desc: "Available" },
               { icon: Globe, label: "24/7", desc: "Support" }
             ].map((item, index) => (
@@ -93,11 +97,13 @@ export default function CoverageSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                className="bg-secondary-foreground/5 rounded-2xl border border-primary/20 p-6 backdrop-blur-sm transition-all hover:border-primary/40"
+                className="bg-secondary-foreground/5 border-primary/20 hover:border-primary/40 rounded-2xl border p-6 backdrop-blur-sm transition-all"
               >
                 <item.icon className="text-primary mx-auto mb-3 h-8 w-8" />
                 <p className="mb-1 font-bold">{item.label}</p>
-                <p className="text-secondary-foreground/70 text-sm">{item.desc}</p>
+                <p className="text-secondary-foreground/70 text-sm">
+                  {item.desc}
+                </p>
               </m.div>
             ))}
           </div>

@@ -5,7 +5,7 @@ import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 export default function ClientsSection() {
-  const t = useTranslations("LandingPage.clients");
+  const t = useTranslations("IndexPage.clients");
 
   const clients = [
     "Saudi Aramco",
