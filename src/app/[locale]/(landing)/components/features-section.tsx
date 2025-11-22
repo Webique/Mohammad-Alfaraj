@@ -102,7 +102,7 @@ export default function FeaturesSection() {
                 className="group/img relative col-span-2 h-64 overflow-hidden rounded-3xl shadow-2xl"
               >
                 <ExportedImage
-                  src="/images/_DSC7506.jpg"
+                  src="/images/portfolio/4.jpg"
                   alt={t("imageAlt.equipment")}
                   fill
                   className="object-cover transition-transform duration-700 group-hover/img:scale-110"
@@ -117,7 +117,7 @@ export default function FeaturesSection() {
                 className="group/img relative h-48 overflow-hidden rounded-3xl shadow-xl"
               >
                 <ExportedImage
-                  src="/images/_DSC1064 copy.jpg"
+                  src="/images/portfolio/2.jpg"
                   alt={t("imageAlt.aerial")}
                   fill
                   className="object-cover transition-transform duration-700 group-hover/img:scale-110"
@@ -131,7 +131,7 @@ export default function FeaturesSection() {
                 className="group/img relative h-48 overflow-hidden rounded-3xl shadow-xl"
               >
                 <ExportedImage
-                  src="/images/_DSC0011 copy.jpg"
+                  src="/images/portfolio/1.jpg"
                   alt={t("imageAlt.professional")}
                   fill
                   className="object-cover transition-transform duration-700 group-hover/img:scale-110"
