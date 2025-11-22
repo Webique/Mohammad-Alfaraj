@@ -5,7 +5,7 @@ import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
 export default function TrustSection() {
-  const t = useTranslations("IndexPage.why");
+  const t = useTranslations("IndexPage.trust");
 
   const trustBadges = [
     {

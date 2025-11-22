@@ -6,64 +6,88 @@ import {
   Camera,
   Clock,
   FileCheck,
-  Shield
+  Shield,
+  Sparkles
 } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 
-const featureIcons = {
-  certified: Award,
-  equipment: Camera,
-  experience: Briefcase,
-  turnaround: Clock,
-  compliance: FileCheck,
-  insured: Shield
-};
-
 export default function WhyChooseSection() {
   const t = useTranslations("IndexPage.why");
 
-  const features = Object.keys(featureIcons) as Array<
-    keyof typeof featureIcons
-  >;
-
-  const gradients = [
-    "from-blue-500 to-cyan-500",
-    "from-purple-500 to-pink-500",
-    "from-amber-500 to-orange-500",
-    "from-green-500 to-emerald-500",
-    "from-red-500 to-rose-500",
-    "from-indigo-500 to-violet-500"
+  const features = [
+    {
+      icon: Award,
+      title: t("items.certified.title"),
+      description: t("items.certified.description")
+    },
+    {
+      icon: Camera,
+      title: t("items.equipment.title"),
+      description: t("items.equipment.description")
+    },
+    {
+      icon: Briefcase,
+      title: t("items.experience.title"),
+      description: t("items.experience.description")
+    },
+    {
+      icon: Clock,
+      title: t("items.turnaround.title"),
+      description: t("items.turnaround.description")
+    },
+    {
+      icon: FileCheck,
+      title: t("items.compliance.title"),
+      description: t("items.compliance.description")
+    },
+    {
+      icon: Shield,
+      title: t("items.insured.title"),
+      description: t("items.insured.description")
+    }
   ];
 
   return (
     <section className="bg-background relative overflow-hidden py-24">
-      {/* Decorative background */}
-      <div className="pointer-events-none absolute inset-0 opacity-30">
+      {/* Enhanced decorative background */}
+      <div className="pointer-events-none absolute inset-0">
         <m.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1]
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, -90, 0]
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-primary/15 absolute start-0 top-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="bg-primary/10 absolute -start-32 top-1/4 h-[600px] w-[600px] rounded-full blur-3xl"
         />
         <m.div
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.1, 0.15, 0.1]
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, 90, 0]
           }}
           transition={{
-            duration: 12,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 2
           }}
-          className="bg-primary/15 absolute bottom-1/4 end-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/10 absolute -end-32 bottom-1/4 h-[600px] w-[600px] rounded-full blur-3xl"
+        />
+        {/* Additional accent orb */}
+        <m.div
+          animate={{
+            y: [0, 50, 0],
+            opacity: [0.15, 0.3, 0.15]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="bg-primary/20 absolute start-1/2 top-1/2 h-64 w-64 rounded-full blur-2xl"
         />
       </div>
 
       <div className="container relative mx-auto px-4">
+        {/* Header */}
         <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,46 +100,47 @@ export default function WhyChooseSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="border-primary/20 bg-primary/5 mb-4 inline-block rounded-full border px-5 py-2"
+            className="border-primary/30 bg-primary/10 mb-6 inline-flex items-center gap-2 rounded-full border px-6 py-2.5 shadow-lg backdrop-blur-sm"
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Why Choose Us
+            <Sparkles className="text-primary h-4 w-4" />
+            <span className="text-primary text-sm font-bold uppercase tracking-wider">
+              {t("badge")}
             </span>
           </m.div>
           <h2 className="mb-5 text-4xl font-black md:text-5xl lg:text-6xl">
             {t("title")}
           </h2>
-          <p className="text-primary text-xl font-bold md:text-2xl">
+          <p className="text-primary mx-auto max-w-2xl text-xl font-bold md:text-2xl">
             {t("subtitle")}
           </p>
         </m.div>
 
-        <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-2 lg:grid-cols-3">
+        {/* Features Grid */}
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
-            const Icon = featureIcons[feature];
-            const gradient = gradients[index % gradients.length];
+            const Icon = feature.icon;
             return (
               <m.div
-                key={feature}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                whileHover={{ y: -15 }}
+                whileHover={{ y: -10 }}
                 className="group text-center"
               >
                 <m.div
-                  whileHover={{ scale: 1.2, rotate: 12 }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3, type: "spring", bounce: 0.5 }}
-                  className={`bg-linear-to-br ${gradient} rounded-4xl mx-auto mb-10 flex h-36 w-36 items-center justify-center shadow-2xl transition-all`}
+                  className="bg-primary mx-auto mb-8 flex h-28 w-28 items-center justify-center rounded-3xl shadow-2xl transition-all"
                 >
-                  <Icon className="h-16 w-16 text-white transition-transform group-hover:scale-110" />
+                  <Icon className="h-14 w-14 text-white transition-transform group-hover:scale-110" />
                 </m.div>
-                <h3 className="group-hover:text-primary mb-6 text-3xl font-black transition-colors">
-                  {t(`items.${feature}.title`)}
+                <h3 className="group-hover:text-primary mb-4 text-2xl font-black transition-colors">
+                  {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {t(`items.${feature}.description`)}
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  {feature.description}
                 </p>
               </m.div>
             );
