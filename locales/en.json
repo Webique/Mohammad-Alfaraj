@@ -106,33 +106,30 @@
       ]
     },
     "why": {
-      "title": "Why Choose Us",
-      "subtitle": "Professional Excellence",
+      "badge": "Trust & Compliance",
+      "title": "Licensed & Certified Professional",
+      "subtitle": "Operating with full legal compliance and industry certifications",
       "items": {
         "certified": {
-          "title": "GACA-Certified",
-          "description": "Commercial drone pilot with full authorization"
-        },
-        "equipment": {
-          "title": "High-End Equipment",
-          "description": "4K/5.1K cinema-quality drone & camera systems"
-        },
-        "experience": {
-          "title": "Industry Experience",
-          "description": "Proven track record in high-security & industrial sites"
-        },
-        "turnaround": {
-          "title": "Fast Turnaround",
-          "description": "Quick delivery with professional editing"
-        },
-        "compliance": {
-          "title": "Full Compliance",
-          "description": "Understanding of corporate & government requirements"
+          "title": "GACA Certified",
+          "description": "Official commercial drone pilot license"
         },
         "insured": {
           "title": "Fully Insured",
-          "description": "Authorized for commercial operations"
+          "description": "Complete coverage for all operations"
+        },
+        "security": {
+          "title": "Security Cleared",
+          "description": "Authorized for high-security sites"
+        },
+        "leader": {
+          "title": "Industry Leader",
+          "description": "Trusted by major corporations"
         }
+      },
+      "certificate": {
+        "label": "Freelancer Certificate",
+        "number": "FL-479717920"
       }
     },
     "coverage": {
