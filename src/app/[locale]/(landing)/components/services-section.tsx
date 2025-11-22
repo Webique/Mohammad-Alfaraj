@@ -31,25 +31,25 @@ export default function ServicesSection() {
       icon: Building2,
       title: t("items.industrial.title"),
       description: t("items.industrial.description"),
-      image: "/images/portfolio/31.jpeg"
+      image: "/images/portfolio/31.jpg"
     },
     {
       icon: HardHat,
       title: t("items.construction.title"),
       description: t("items.construction.description"),
-      image: "/images/portfolio/22.jpeg"
+      image: "/images/portfolio/22.jpg"
     },
     {
       icon: Video,
       title: t("items.corporate.title"),
       description: t("items.corporate.description"),
-      image: "/images/portfolio/32.jpeg"
+      image: "/images/portfolio/32.jpg"
     },
     {
       icon: Ship,
       title: t("items.maritime.title"),
       description: t("items.maritime.description"),
-      image: "/images/portfolio/28.jpeg"
+      image: "/images/portfolio/28.jpg"
     },
     {
       icon: Map,
@@ -61,7 +61,7 @@ export default function ServicesSection() {
       icon: Home,
       title: t("items.architectural.title"),
       description: t("items.architectural.description"),
-      image: "/images/portfolio/17.jpeg"
+      image: "/images/portfolio/17.jpg"
     },
     {
       icon: Calendar,
@@ -79,7 +79,7 @@ export default function ServicesSection() {
       icon: Radio,
       title: t("items.streaming.title"),
       description: t("items.streaming.description"),
-      image: "/images/portfolio/29.jpeg"
+      image: "/images/portfolio/29.jpg"
     }
   ];
 
