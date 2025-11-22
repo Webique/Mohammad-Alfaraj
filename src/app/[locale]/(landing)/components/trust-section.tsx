@@ -155,7 +155,7 @@ export default function TrustSection() {
             className="border-primary/30 bg-primary/10 inline-flex items-center gap-4 rounded-2xl border-2 px-8 py-5 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl"
           >
             <Award className="text-primary h-8 w-8" />
-            <div className="text-left">
+            <div className="text-start">
               <p className="text-muted-foreground text-sm font-semibold">
                 {t("certificate.label")}
               </p>

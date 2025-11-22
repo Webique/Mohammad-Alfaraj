@@ -91,9 +91,9 @@
       }
     },
     "clients": {
+      "badge": "Trusted By Leaders",
       "title": "Major Clients",
-      "subtitle": "Trusted by Industry Leaders",
-      "description": "We proudly deliver services to leading national and international entities across the Kingdom",
+      "subtitle": "Trusted by Industry Leaders Across Saudi Arabia",
       "list": [
         "Saudi Aramco",
         "Tamimi Global",
@@ -103,7 +103,11 @@
         "Saudi League (ROSHN)",
         "Batterjee Medical College",
         "Prince Sultan Cultural Center"
-      ]
+      ],
+      "trustBadge": {
+        "title": "Trusted by 8+ Major Organizations",
+        "subtitle": "Delivering excellence since 2016"
+      }
     },
     "why": {
       "badge": "Trust & Compliance",

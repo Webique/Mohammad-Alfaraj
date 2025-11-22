@@ -8,44 +8,56 @@ export default function ClientsSection() {
   const t = useTranslations("IndexPage.clients");
 
   const clients = [
-    "Saudi Aramco",
-    "Tamimi Global",
-    "Chinese Contracting Company",
-    "Ministry of Defence & Aviation",
-    "Dammam Seaport",
-    "Saudi League (ROSHN)",
-    "Batterjee Medical College",
-    "Prince Sultan Cultural Center"
+    t("list.0"),
+    t("list.1"),
+    t("list.2"),
+    t("list.3"),
+    t("list.4"),
+    t("list.5"),
+    t("list.6"),
+    t("list.7")
   ];
 
   return (
-    <section className="bg-muted relative overflow-hidden py-24">
-      {/* Decorative elements */}
+    <section className="bg-background relative overflow-hidden py-24">
+      {/* Enhanced decorative background */}
       <div className="pointer-events-none absolute inset-0">
         <m.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.05, 0.1, 0.05]
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, 90, 0]
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-primary/10 absolute start-1/4 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="bg-primary/10 absolute -start-32 top-1/4 h-[600px] w-[600px] rounded-full blur-3xl"
         />
         <m.div
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.05, 0.1, 0.05]
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, -90, 0]
           }}
           transition={{
-            duration: 12,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 2
           }}
-          className="bg-primary/10 absolute bottom-0 end-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/10 absolute -end-32 bottom-1/4 h-[600px] w-[600px] rounded-full blur-3xl"
+        />
+        {/* Additional accent orb */}
+        <m.div
+          animate={{
+            y: [0, -50, 0],
+            opacity: [0.15, 0.3, 0.15]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="bg-primary/20 absolute start-1/2 top-1/2 h-64 w-64 rounded-full blur-2xl"
         />
       </div>
 
       <div className="container relative mx-auto px-4">
+        {/* Header */}
         <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,63 +70,65 @@ export default function ClientsSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="border-primary/20 bg-primary/5 mb-4 inline-flex items-center gap-2 rounded-full border px-5 py-2"
+            className="border-primary/30 bg-primary/10 mb-6 inline-flex items-center gap-2 rounded-full border px-6 py-2.5 shadow-lg backdrop-blur-sm"
           >
             <Star className="text-primary h-4 w-4 fill-current" />
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Trusted By Leaders
+            <span className="text-primary text-sm font-bold uppercase tracking-wider">
+              {t("badge")}
             </span>
             <Star className="text-primary h-4 w-4 fill-current" />
           </m.div>
           <h2 className="mb-5 text-4xl font-black md:text-5xl lg:text-6xl">
             {t("title")}
           </h2>
-          <p className="text-primary mb-4 text-xl font-bold md:text-2xl">
+          <p className="text-primary mx-auto max-w-2xl text-xl font-bold md:text-2xl">
             {t("subtitle")}
-          </p>
-          <p className="text-muted-foreground mx-auto max-w-3xl text-lg leading-relaxed">
-            {t("description")}
           </p>
         </m.div>
 
-        <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Clients Grid */}
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {clients.map((client, index) => (
             <m.div
-              key={client}
+              key={index}
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               whileHover={{
-                y: -15,
-                scale: 1.08,
+                y: -8,
+                scale: 1.05,
                 transition: { duration: 0.3 }
               }}
-              className="bg-card border-border hover:border-primary/50 rounded-4xl group relative overflow-hidden border-2 p-10 shadow-xl transition-all hover:shadow-2xl"
+              className="bg-card hover:border-primary/20 group relative overflow-hidden rounded-3xl border border-transparent p-8 shadow-lg transition-all hover:shadow-2xl"
             >
-              {/* Gradient overlay on hover STRONGER */}
-              <div className="bg-linear-to-br from-primary/20 absolute inset-0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              {/* Gradient overlay on hover */}
+              <div className="bg-linear-to-br from-primary/0 to-primary/10 absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                <div className="bg-primary/20 group-hover:bg-primary/30 mb-6 rounded-3xl p-5 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                  <Building2 className="text-primary h-12 w-12 transition-transform duration-300 group-hover:scale-110" />
-                </div>
-                <p className="text-card-foreground group-hover:text-primary text-lg font-black leading-snug transition-colors duration-300">
+                <m.div
+                  whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-primary/10 group-hover:bg-primary/20 mb-6 rounded-2xl p-5 transition-all duration-300"
+                >
+                  <Building2 className="text-primary h-12 w-12" />
+                </m.div>
+                <p className="group-hover:text-primary text-lg font-black leading-snug transition-colors duration-300">
                   {client}
                 </p>
               </div>
 
-              {/* Sparkle effect on hover BIGGER */}
+              {/* Sparkle effect on hover */}
               <m.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileHover={{ opacity: 1, scale: 1 }}
-                className="absolute end-5 top-5"
+                className="absolute end-4 top-4"
               >
-                <Sparkles className="text-primary h-6 w-6" />
+                <Sparkles className="text-primary h-5 w-5" />
               </m.div>
 
-              {/* Decorative corner glow BIGGER */}
-              <div className="bg-primary/30 absolute -end-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Decorative corner glow */}
+              <div className="bg-primary/5 absolute -end-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
             </m.div>
           ))}
         </div>
@@ -127,19 +141,20 @@ export default function ClientsSection() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="border-primary/20 bg-primary/5 inline-flex items-center gap-3 rounded-full border px-8 py-4">
+          <m.div
+            whileHover={{ scale: 1.05 }}
+            className="border-primary/30 bg-primary/10 inline-flex items-center gap-3 rounded-full border px-8 py-4 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl"
+          >
             <div className="bg-primary flex h-10 w-10 items-center justify-center rounded-full">
-              <Star className="text-primary-foreground h-5 w-5 fill-current" />
+              <Star className="h-5 w-5 fill-current text-white" />
             </div>
-            <div className="text-left">
-              <p className="text-sm font-semibold">
-                Trusted by 8+ Major Organizations
-              </p>
+            <div className="text-start">
+              <p className="text-sm font-semibold">{t("trustBadge.title")}</p>
               <p className="text-muted-foreground text-xs">
-                Delivering excellence since 2016
+                {t("trustBadge.subtitle")}
               </p>
             </div>
-          </div>
+          </m.div>
         </m.div>
       </div>
     </section>
