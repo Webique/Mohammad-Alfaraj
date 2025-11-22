@@ -26,9 +26,12 @@ export default function GallerySection() {
     <>
       <section
         id="portfolio"
-        className="bg-linear-to-b from-gray-50 to-white py-20 dark:from-gray-900 dark:to-gray-800"
+        className="from-muted to-background relative bg-gradient-to-b py-20"
       >
-        <div className="container mx-auto px-4">
+        {/* Background pattern */}
+        <div className="pattern-grid pointer-events-none absolute inset-0 opacity-5" />
+
+        <div className="container relative mx-auto px-4">
           <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -36,9 +39,22 @@ export default function GallerySection() {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <h2 className="mb-4 text-4xl font-bold md:text-5xl">Portfolio</h2>
-            <p className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+            <m.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="border-primary/20 bg-primary/5 mb-4 inline-block rounded-full border px-4 py-1"
+            >
+              <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+                Portfolio
+              </span>
+            </m.div>
+            <h2 className="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
               Our Work in Action
+            </h2>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              Capturing moments from the sky with precision and artistry
             </p>
           </m.div>
 
@@ -49,18 +65,39 @@ export default function GallerySection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl shadow-lg"
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ y: -8 }}
+                className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl shadow-xl transition-shadow hover:shadow-2xl"
                 onClick={() => setSelectedImage(image)}
               >
                 <ExportedImage
                   src={image}
                   alt={`Portfolio ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
-                <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/30" />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {/* Gold accent border on hover */}
+                <div className="border-primary/0 group-hover:border-primary/50 absolute inset-0 border-2 transition-all duration-300" />
+                {/* View icon */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="bg-primary/90 rounded-full p-4 backdrop-blur-sm">
+                    <svg
+                      className="text-primary-foreground h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </m.div>
             ))}
           </div>

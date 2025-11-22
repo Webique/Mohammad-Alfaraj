@@ -42,14 +42,18 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl"
+            className="group relative h-[400px] overflow-hidden rounded-2xl shadow-2xl"
           >
             <ExportedImage
               src="/images/DJI_20240227182720_0289_D-Enhanced-NR.jpg"
               alt="Drone Photography"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
+            {/* Gold border accent */}
+            <div className="border-primary/0 group-hover:border-primary/30 absolute inset-0 border-2 transition-all duration-500" />
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </m.div>
         </div>
       </div>

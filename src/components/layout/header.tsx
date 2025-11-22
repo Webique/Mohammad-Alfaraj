@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 import * as React from "react";
@@ -15,8 +15,15 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const t = useTranslations("Header");
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { label: t("nav.home"), href: "/" },
@@ -27,22 +34,33 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/95 shadow-sm backdrop-blur-md transition-all duration-300">
-      {/* Main Header */}
+    <m.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-background/80 shadow-lg backdrop-blur-xl"
+          : "bg-transparent"
+      )}
+    >
       <div className="layout">
-        <div className="flex h-16 items-center justify-between lg:h-20">
-          {/* Logo */}
+        <div className="flex h-20 items-center justify-between lg:h-24">
+          {/* Logo with animation */}
           <m.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex h-full items-center gap-3"
+            className="relative z-10"
           >
-            <Logo />
+            <Link href="/" className="group flex items-center gap-3">
+              <Logo className="transition-transform duration-300 group-hover:scale-105" />
+            </Link>
           </m.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-1 lg:flex">
             {navItems.map((item, index) => (
               <m.div
                 key={index}
@@ -52,82 +70,54 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={cn(
-                    "text-foreground hover:text-primary relative font-medium transition-colors",
-                    "before:absolute before:bottom-0 before:start-0 before:h-0.5 before:w-0 before:bg-current",
-                    "before:transition-all before:duration-300 hover:before:w-full"
-                  )}
+                  className="hover:text-primary group relative px-4 py-2 font-medium transition-colors"
                 >
                   {item.label}
+                  <span className="bg-primary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
                 </Link>
               </m.div>
             ))}
           </nav>
 
-          {/* CTA  */}
+          {/* CTA & Language Switcher */}
           <m.div
-            className="hidden items-center space-x-3 lg:flex"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="hidden items-center gap-4 lg:flex"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <LocaleSwitcher isTop={false} />
 
-            <div className="flex items-center">
-              <Button
-                className="hidden h-auto items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-xl has-[>svg]:px-6 lg:flex"
-                asChild
+            <Button
+              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-primary/50 group relative overflow-hidden px-6 py-2.5 transition-all hover:shadow-lg"
+              asChild
+            >
+              <Link
+                href={siteConfig.links.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Link
-                  href={siteConfig.links.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="size-4" />
-                  {t("cta")}
-                </Link>
-              </Button>
-            </div>
+                <span className="relative z-10">{t("cta")}</span>
+                <div className="from-primary/0 to-primary/0 absolute inset-0 -z-0 bg-gradient-to-r via-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
+              </Link>
+            </Button>
           </m.div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 lg:hidden">
-            <m.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="flex items-center"
-            >
-              <LocaleSwitcher className="w-auto" isTop={false} />
+          <div className="flex items-center gap-3 lg:hidden">
+            <LocaleSwitcher className="w-auto" isTop={false} />
 
-              <button
-                className="text-foreground hover:bg-muted rounded-md p-2 transition-all duration-300 hover:scale-105"
-                onClick={toggleMenu}
-                aria-label="Toggle menu"
-              >
-                <div className="space-y-1.5">
-                  <m.div
-                    animate={
-                      isMenuOpen ? { rotate: 45, y: 9 } : { rotate: 0, y: 0 }
-                    }
-                    transition={{ duration: 0.3 }}
-                    className="h-0.5 w-6 bg-current"
-                  />
-                  <m.div
-                    animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                    className="h-0.5 w-6 bg-current"
-                  />
-                  <m.div
-                    animate={
-                      isMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
-                    }
-                    transition={{ duration: 0.3 }}
-                    className="h-0.5 w-6 bg-current"
-                  />
-                </div>
-              </button>
-            </m.div>
+            <button
+              className="hover:bg-muted relative z-10 rounded-lg p-2 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
 
@@ -141,51 +131,47 @@ export default function Header() {
           transition={{ duration: 0.3 }}
           className="overflow-hidden lg:hidden"
         >
-          <nav className="space-y-4 border-t border-border py-4">
-            <div className="space-y-4 px-4">
-              {navItems.map((item, index) => (
-                <m.div
-                  key={index}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index, duration: 0.4 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary block rounded-lg px-4 py-3 text-base font-medium transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2"
-                  >
-                    {item.label}
-                  </Link>
-                </m.div>
-              ))}
-
-              {/* CTA in Mobile Menu */}
+          <nav className="border-border space-y-2 border-t py-6">
+            {navItems.map((item, index) => (
               <m.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="border-t pt-4"
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 * index, duration: 0.3 }}
               >
-                <Button
-                  className="h-auto w-full items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-xl has-[>svg]:px-6"
-                  asChild
+                <Link
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:bg-primary/10 hover:text-primary block rounded-lg px-4 py-3 font-medium transition-colors"
                 >
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={siteConfig.links.whatsapp}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <Phone className="size-4" />
-                    {t("cta")}
-                  </a>
-                </Button>
+                  {item.label}
+                </Link>
               </m.div>
-            </div>
+            ))}
+
+            <m.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.3 }}
+              className="pt-4"
+            >
+              <Button
+                className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
+                asChild
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={siteConfig.links.whatsapp}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("cta")}
+                </a>
+              </Button>
+            </m.div>
           </nav>
         </m.div>
       </div>
-    </header>
+    </m.header>
   );
 }
