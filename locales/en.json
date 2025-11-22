@@ -44,8 +44,9 @@
       }
     },
     "services": {
-      "title": "Our Services",
-      "subtitle": "Comprehensive Aerial Solutions",
+      "badge": "Our Services",
+      "title": "Comprehensive Aerial Solutions",
+      "subtitle": "Professional Services Tailored to Your Industry Needs",
       "items": {
         "aerial": {
           "title": "Aerial Drone Photography & Videography",
@@ -220,6 +221,7 @@
     "consulting": "Event Coverage",
     "saudiArabia": "Eastern Province, Saudi Arabia",
     "available24_7": "Available 24/7",
+    "followMe":"Follow Me",
     "socialMedia": {
       "instagram": "Instagram",
       "linkedin": "LinkedIn",

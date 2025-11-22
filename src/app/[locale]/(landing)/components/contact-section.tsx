@@ -1,11 +1,9 @@
 "use client";
 
-import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export default function ContactSection() {
@@ -134,32 +132,6 @@ export default function ContactSection() {
                 </m.div>
               </div>
             </div>
-
-            <div>
-              <h3 className="mb-6 text-2xl font-black">Follow Us</h3>
-              <div className="flex gap-5">
-                <m.a
-                  href={siteConfig.links.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -5, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-linear-to-br flex h-16 w-16 items-center justify-center rounded-2xl from-purple-600 to-pink-600 shadow-2xl transition-shadow hover:shadow-[0_10px_40px_rgba(168,85,247,0.4)]"
-                >
-                  <Instagram className="h-7 w-7 text-white" />
-                </m.a>
-                <m.a
-                  href={siteConfig.links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -5, rotate: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-700 shadow-2xl transition-shadow hover:shadow-[0_10px_40px_rgba(29,78,216,0.4)]"
-                >
-                  <Linkedin className="h-7 w-7 text-white" />
-                </m.a>
-              </div>
-            </div>
           </m.div>
 
           {/* Enhanced Certificate Badge */}
@@ -207,33 +179,6 @@ export default function ContactSection() {
             </div>
           </m.div>
         </div>
-
-        {/* Enhanced CTA */}
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <m.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-primary/60 shadow-primary/40 group relative overflow-hidden rounded-2xl px-14 py-7 text-lg font-bold shadow-2xl transition-all"
-              asChild
-            >
-              <Link
-                href={`https://wa.me/${siteConfig.support.whatsapp.replace(/\+/g, "")}`}
-              >
-                <span className="relative z-10 flex items-center gap-3">
-                  <Phone className="h-6 w-6" />
-                  Contact via WhatsApp
-                </span>
-                <div className="bg-linear-to-r absolute inset-0 z-0 from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </Link>
-            </Button>
-          </m.div>
-        </m.div>
       </div>
     </section>
   );

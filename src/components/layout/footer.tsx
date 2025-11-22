@@ -78,7 +78,10 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="space-y-3">
-              <div className="mt-10 flex gap-3">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+                {t("followMe")}
+              </h4>
+              <div className="flex gap-3">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
