@@ -41,10 +41,10 @@ export default function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         "bg-white/95 shadow-sm backdrop-blur-xl",
-        "md:shadow-none",
+        "lg:shadow-none",
         isScrolled
-          ? "md:bg-white/95 md:shadow-sm md:backdrop-blur-xl"
-          : "md:bg-transparent md:backdrop-blur-sm"
+          ? "lg:bg-white/95 lg:shadow-sm lg:backdrop-blur-xl"
+          : "lg:bg-transparent lg:backdrop-blur-sm"
       )}
     >
       {/* Main Header */}
@@ -60,7 +60,7 @@ export default function Header() {
             <div
               className={cn(
                 "transition-all duration-300",
-                isScrolled ? "" : "md:brightness-0 md:invert"
+                isScrolled ? "" : "lg:brightness-0 lg:invert"
               )}
             >
               <Logo />
@@ -82,7 +82,7 @@ export default function Header() {
                     "hover:text-primary relative text-lg font-semibold transition-colors",
                     isScrolled
                       ? "text-gray-700"
-                      : "text-gray-700 md:text-white",
+                      : "text-gray-700 lg:text-white",
                     "before:bg-primary before:absolute before:-bottom-1 before:start-0 before:h-0.5 before:w-0",
                     "before:transition-all before:duration-300 hover:before:w-full"
                   )}
