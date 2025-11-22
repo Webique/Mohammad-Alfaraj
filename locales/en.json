@@ -168,10 +168,25 @@
       }
     },
     "coverage": {
-      "title": "Service Coverage",
-      "subtitle": "Eastern Province & Beyond",
+      "badge": "Service Coverage",
+      "title": "Eastern Province & Beyond",
+      "subtitle": "Serving Major Cities Across the Region",
       "description": "We primarily operate across the Eastern Province, with availability for projects across Saudi Arabia upon request",
-      "areas": "Dammam • Dhahran • Al Khobar • Jubail • Qatif • Ras Tanura"
+      "areas": "Dammam • Dhahran • Al Khobar • Jubail • Qatif • Ras Tanura",
+      "cards": {
+        "primary": {
+          "label": "Eastern Province",
+          "desc": "Primary Coverage"
+        },
+        "nationwide": {
+          "label": "Nationwide",
+          "desc": "Available"
+        },
+        "support": {
+          "label": "24/7",
+          "desc": "Support"
+        }
+      }
     },
     "gallery": {
       "badge": "Portfolio",
@@ -179,15 +194,36 @@
       "subtitle": "Capturing moments from the sky with precision and artistry"
     },
     "contact": {
-      "title": "Get In Touch",
-      "subtitle": "Let's Discuss Your Project",
-      "description": "Ready to elevate your project with professional aerial imaging? Contact us today for a consultation.",
-      "form": {
-        "name": "Your Name",
-        "email": "Email Address",
-        "phone": "Phone Number",
-        "message": "Project Details",
-        "submit": "Send Message"
+      "badge": "Get In Touch",
+      "title": "Let's Discuss Your Project",
+      "subtitle": "Ready to elevate your project with professional aerial imaging?",
+      "info": {
+        "title": "Contact Information",
+        "phone": "Phone",
+        "email": "Email",
+        "location": "Location",
+        "address": "Eastern Province, Saudi Arabia"
+      },
+      "certificate": {
+        "title": "GACA Certified",
+        "subtitle": "Authorized Commercial Drone Pilot",
+        "label": "Freelancer Certificate",
+        "description": "Fully licensed and insured for commercial operations across Saudi Arabia"
+      }
+    },
+    "cta": {
+      "badge": "Ready to Start Your Project?",
+      "title": "Let's Capture Your Vision from Above",
+      "subtitle": "Professional aerial imaging solutions for your business. Contact us today for a free consultation and quote.",
+      "buttons": {
+        "whatsapp": "Contact via WhatsApp",
+        "portfolio": "View Our Work"
+      },
+      "trust": {
+        "certified": "GACA Certified",
+        "insured": "Fully Insured",
+        "clients": "8+ Major Clients",
+        "turnaround": "Fast Turnaround"
       }
     }
 

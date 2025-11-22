@@ -2,12 +2,15 @@
 
 import { ArrowRight, Phone, Sparkles } from "lucide-react";
 import * as m from "motion/react-m";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export default function CTABanner() {
+  const t = useTranslations("IndexPage.cta");
+
   return (
     <section className="bg-primary text-primary-foreground relative overflow-hidden py-24">
       {/* Animated background patterns */}
@@ -52,7 +55,7 @@ export default function CTABanner() {
           >
             <Sparkles className="h-5 w-5 animate-pulse" />
             <span className="text-sm font-bold uppercase tracking-wider">
-              Ready to Start Your Project?
+              {t("badge")}
             </span>
             <Sparkles className="h-5 w-5 animate-pulse" />
           </m.div>
@@ -64,7 +67,7 @@ export default function CTABanner() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mb-6 text-4xl font-black leading-tight md:text-5xl lg:text-6xl"
           >
-            Let&apos;s Capture Your Vision from Above
+            {t("title")}
           </m.h2>
 
           <m.p
@@ -74,8 +77,7 @@ export default function CTABanner() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-primary-foreground/90 mb-10 text-lg leading-relaxed md:text-xl"
           >
-            Professional aerial imaging solutions for your business. Contact us
-            today for a free consultation and quote.
+            {t("subtitle")}
           </m.p>
 
           <m.div
@@ -97,7 +99,7 @@ export default function CTABanner() {
                 >
                   <span className="relative z-10 flex items-center gap-3">
                     <Phone className="h-6 w-6" />
-                    Contact via WhatsApp
+                    {t("buttons.whatsapp")}
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                   </span>
                   <div className="bg-linear-to-r via-primary/20 absolute inset-0 z-0 from-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -113,8 +115,8 @@ export default function CTABanner() {
                 asChild
               >
                 <Link href="#portfolio">
-                  View Our Work
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  {t("buttons.portfolio")}
+                  <ArrowRight className="ms-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </Link>
               </Button>
             </m.div>
@@ -130,19 +132,19 @@ export default function CTABanner() {
           >
             <div className="flex items-center gap-2">
               <div className="bg-primary-foreground h-2 w-2 rounded-full" />
-              GACA Certified
+              {t("trust.certified")}
             </div>
             <div className="flex items-center gap-2">
               <div className="bg-primary-foreground h-2 w-2 rounded-full" />
-              Fully Insured
+              {t("trust.insured")}
             </div>
             <div className="flex items-center gap-2">
               <div className="bg-primary-foreground h-2 w-2 rounded-full" />
-              8+ Major Clients
+              {t("trust.clients")}
             </div>
             <div className="flex items-center gap-2">
               <div className="bg-primary-foreground h-2 w-2 rounded-full" />
-              Fast Turnaround
+              {t("trust.turnaround")}
             </div>
           </m.div>
         </div>
