@@ -1,14 +1,14 @@
 import type { Locale } from "next-intl";
 
-import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { getLangDir } from "rtl-detect";
 
-import { routing } from "@/i18n/routing.public";
-import { siteConfig } from "@/config/site";
 import RootProviders from "@/app/root-providers";
 import Layout from "@/components/layout";
+import { siteConfig } from "@/config/site";
+import { routing } from "@/i18n/routing.public";
 
 import Document from "../document";
 
@@ -57,9 +57,9 @@ export async function generateMetadata({ params }: { params: Params }) {
         default: t("name"),
         template: `%s | ${t("short_name")}`
       },
-      description: t("description"),
+      description: t("description")
       // images: [siteConfig.ogImage],
-      creator: siteConfig.twitter
+      // creator: siteConfig.twitter
     },
     robots: {
       index: process.env.NEXT_PUBLIC_INDEXING_ENABLED === "true",

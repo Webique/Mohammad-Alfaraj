@@ -1,16 +1,16 @@
 "use client";
 
 import {
-    Building2,
-    Calendar,
-    Camera,
-    Film,
-    HardHat,
-    Home,
-    Map,
-    Radio,
-    Ship,
-    Video
+  Building2,
+  Calendar,
+  Camera,
+  Film,
+  HardHat,
+  Home,
+  Map,
+  Radio,
+  Ship,
+  Video
 } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";

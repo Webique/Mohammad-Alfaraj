@@ -20,7 +20,7 @@ export default function IndexPage({ params }: PageProps) {
   setRequestLocale(locale as Locale);
 
   return (
-    <main className="min-h-screen">
+    <main>
       <HeroSection />
       <AboutSection />
       <ServicesSection />
