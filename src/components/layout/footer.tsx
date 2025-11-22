@@ -53,7 +53,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground border-border/40 relative border-t">
       {/* Subtle decorative top accent */}
-      <div className="via-primary/20 bg-linear-to-r absolute left-0 top-0 h-px w-full from-transparent to-transparent" />
+      <div className="via-primary/20 bg-linear-to-r absolute start-0 top-0 h-px w-full from-transparent to-transparent" />
 
       <div className="container relative mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         {/* Main Footer Content */}

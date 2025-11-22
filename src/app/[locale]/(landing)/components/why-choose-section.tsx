@@ -37,7 +37,7 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="bg-background relative overflow-hidden py-40">
+    <section className="bg-background relative overflow-hidden py-24">
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <m.div
@@ -46,7 +46,7 @@ export default function WhyChooseSection() {
             opacity: [0.1, 0.15, 0.1]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-primary/15 absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/15 absolute start-0 top-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
         />
         <m.div
           animate={{
@@ -59,7 +59,7 @@ export default function WhyChooseSection() {
             ease: "easeInOut",
             delay: 1
           }}
-          className="bg-primary/15 absolute bottom-1/4 right-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/15 absolute bottom-1/4 end-0 h-[500px] w-[500px] rounded-full blur-3xl"
         />
       </div>
 

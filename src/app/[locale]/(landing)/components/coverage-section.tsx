@@ -17,7 +17,7 @@ export default function CoverageSection() {
             rotate: [0, 90, 0]
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="bg-primary absolute left-1/4 top-1/4 h-96 w-96 rounded-full blur-3xl"
+          className="bg-primary absolute start-1/4 top-1/4 h-96 w-96 rounded-full blur-3xl"
         />
         <m.div
           animate={{
@@ -25,7 +25,7 @@ export default function CoverageSection() {
             rotate: [0, -90, 0]
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="bg-primary absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full blur-3xl"
+          className="bg-primary absolute bottom-1/4 end-1/4 h-96 w-96 rounded-full blur-3xl"
         />
       </div>
 
@@ -65,8 +65,8 @@ export default function CoverageSection() {
             className="border-primary/30 bg-primary/15 relative overflow-hidden rounded-3xl border-2 p-10 shadow-2xl backdrop-blur-md"
           >
             {/* Decorative elements */}
-            <div className="bg-primary/10 absolute -right-10 -top-10 h-40 w-40 rounded-full blur-2xl" />
-            <div className="bg-primary/10 absolute -bottom-10 -left-10 h-40 w-40 rounded-full blur-2xl" />
+            <div className="bg-primary/10 absolute -end-10 -top-10 h-40 w-40 rounded-full blur-2xl" />
+            <div className="bg-primary/10 absolute -bottom-10 -start-10 h-40 w-40 rounded-full blur-2xl" />
 
             <div className="relative z-10">
               <div className="mb-6 flex items-center justify-center gap-3">

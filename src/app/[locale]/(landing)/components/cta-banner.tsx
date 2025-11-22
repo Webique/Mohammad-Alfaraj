@@ -18,7 +18,7 @@ export default function CTABanner() {
             rotate: [0, 90, 0]
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute left-0 top-0 h-96 w-96 rounded-full bg-white blur-3xl"
+          className="absolute start-0 top-0 h-96 w-96 rounded-full bg-white blur-3xl"
         />
         <m.div
           animate={{
@@ -26,7 +26,7 @@ export default function CTABanner() {
             rotate: [0, -90, 0]
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white blur-3xl"
+          className="absolute bottom-0 end-0 h-96 w-96 rounded-full bg-white blur-3xl"
         />
       </div>
 

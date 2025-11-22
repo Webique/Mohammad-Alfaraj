@@ -51,7 +51,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="bg-background relative overflow-hidden py-40"
+      className="bg-background relative overflow-hidden py-24"
     >
       {/* Animated background pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
@@ -125,7 +125,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Decorative corner accent BIGGER */}
-                <div className="bg-primary/10 absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="bg-primary/10 absolute -end-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
               </m.div>
             );
           })}

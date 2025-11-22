@@ -19,7 +19,7 @@ export default function ClientsSection() {
   ];
 
   return (
-    <section className="bg-muted relative overflow-hidden py-40">
+    <section className="bg-muted relative overflow-hidden py-24">
       {/* Decorative elements */}
       <div className="pointer-events-none absolute inset-0">
         <m.div
@@ -28,7 +28,7 @@ export default function ClientsSection() {
             opacity: [0.05, 0.1, 0.05]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-primary/10 absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/10 absolute start-1/4 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
         />
         <m.div
           animate={{
@@ -41,7 +41,7 @@ export default function ClientsSection() {
             ease: "easeInOut",
             delay: 1
           }}
-          className="bg-primary/10 absolute bottom-0 right-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/10 absolute bottom-0 end-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
         />
       </div>
 
@@ -108,13 +108,13 @@ export default function ClientsSection() {
               <m.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileHover={{ opacity: 1, scale: 1 }}
-                className="absolute right-5 top-5"
+                className="absolute end-5 top-5"
               >
                 <Sparkles className="text-primary h-6 w-6" />
               </m.div>
 
               {/* Decorative corner glow BIGGER */}
-              <div className="bg-primary/30 absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="bg-primary/30 absolute -end-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
             </m.div>
           ))}
         </div>

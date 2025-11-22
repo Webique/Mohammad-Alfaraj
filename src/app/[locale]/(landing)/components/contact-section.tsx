@@ -21,7 +21,7 @@ export default function ContactSection() {
             opacity: [0.1, 0.15, 0.1]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-primary/15 absolute right-0 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/15 absolute end-0 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
         />
         <m.div
           animate={{
@@ -34,7 +34,7 @@ export default function ContactSection() {
             ease: "easeInOut",
             delay: 1
           }}
-          className="bg-primary/15 absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          className="bg-primary/15 absolute bottom-0 start-0 h-[500px] w-[500px] rounded-full blur-3xl"
         />
       </div>
 
@@ -97,7 +97,7 @@ export default function ContactSection() {
                       {siteConfig.support.phone}
                     </p>
                   </div>
-                  <div className="bg-linear-to-br absolute -right-10 -top-10 h-32 w-32 rounded-full from-blue-500/10 to-cyan-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="bg-linear-to-br absolute -end-10 -top-10 h-32 w-32 rounded-full from-blue-500/10 to-cyan-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 </m.a>
 
                 <m.a
@@ -116,7 +116,7 @@ export default function ContactSection() {
                       {siteConfig.support.email}
                     </p>
                   </div>
-                  <div className="bg-linear-to-br absolute -right-10 -top-10 h-32 w-32 rounded-full from-purple-500/10 to-pink-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                  <div className="bg-linear-to-br absolute -end-10 -top-10 h-32 w-32 rounded-full from-purple-500/10 to-pink-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 </m.a>
 
                 <m.div className="bg-card border-border relative flex items-center gap-6 overflow-hidden rounded-3xl border-2 p-6 shadow-xl">
@@ -171,8 +171,8 @@ export default function ContactSection() {
             className="bg-card border-border relative overflow-hidden rounded-3xl border p-10 shadow-2xl"
           >
             {/* Decorative background */}
-            <div className="bg-primary/5 absolute -right-20 -top-20 h-60 w-60 rounded-full blur-3xl" />
-            <div className="bg-primary/5 absolute -bottom-20 -left-20 h-60 w-60 rounded-full blur-3xl" />
+            <div className="bg-primary/5 absolute -end-20 -top-20 h-60 w-60 rounded-full blur-3xl" />
+            <div className="bg-primary/5 absolute -bottom-20 -start-20 h-60 w-60 rounded-full blur-3xl" />
 
             <div className="relative z-10 space-y-8 text-center">
               <m.div

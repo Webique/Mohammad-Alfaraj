@@ -28,7 +28,7 @@ export default function Logo({
     >
       <ExportedImage
         className={cn(
-          "sm:w-30 h-auto w-16 max-w-full overflow-hidden",
+          "h-auto w-16 max-w-full overflow-hidden sm:w-24",
           imgClassName
         )}
         src={src}

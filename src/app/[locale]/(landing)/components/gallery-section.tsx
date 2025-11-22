@@ -47,7 +47,7 @@ export default function GallerySection() {
               opacity: [0.08, 0.15, 0.08]
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-primary absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
+            className="bg-primary absolute start-1/4 top-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
           />
           <m.div
             animate={{
@@ -60,7 +60,7 @@ export default function GallerySection() {
               ease: "easeInOut",
               delay: 1
             }}
-            className="bg-primary absolute bottom-1/4 right-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
+            className="bg-primary absolute bottom-1/4 end-1/4 h-[500px] w-[500px] rounded-full blur-3xl"
           />
         </div>
 
@@ -136,7 +136,7 @@ export default function GallerySection() {
                   </m.div>
                 </div>
                 {/* Image number badge */}
-                <div className="absolute left-5 top-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute start-5 top-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <div className="bg-primary/95 rounded-xl px-4 py-2 shadow-xl backdrop-blur-sm">
                     <span className="text-primary-foreground text-base font-black">
                       {String(index + 1).padStart(2, "0")}

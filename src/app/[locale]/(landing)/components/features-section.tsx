@@ -144,7 +144,7 @@ export default function FeaturesSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="border-background bg-primary absolute -bottom-6 -left-6 rounded-2xl border-4 p-6 shadow-2xl"
+              className="border-background bg-primary absolute -bottom-6 -start-6 rounded-2xl border-4 p-6 shadow-2xl"
             >
               <div className="text-center">
                 <div className="text-primary-foreground text-4xl font-black">
