@@ -1,10 +1,11 @@
 "use client";
 
-import { ArrowRight, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
+import Whatsapp from "@/assets/icons/whatsapp-2.svg";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
@@ -98,9 +99,9 @@ export default function CTABanner() {
                   href={`https://wa.me/${siteConfig.support.whatsapp.replace(/\+/g, "")}`}
                 >
                   <span className="relative z-10 flex items-center gap-3">
-                    <Phone className="h-6 w-6" />
+                    <Whatsapp className="h-6 w-6" />
                     {t("buttons.whatsapp")}
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2 rtl:rotate-180 rtl:group-hover:-translate-x-2" />
                   </span>
                   <div className="bg-linear-to-r via-primary/20 absolute inset-0 z-0 from-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
@@ -116,7 +117,7 @@ export default function CTABanner() {
               >
                 <Link href="#portfolio">
                   {t("buttons.portfolio")}
-                  <ArrowRight className="ms-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2 rtl:rotate-180 rtl:group-hover:-translate-x-2" />
                 </Link>
               </Button>
             </m.div>
@@ -128,7 +129,7 @@ export default function CTABanner() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-primary-foreground/80 mt-12 flex flex-wrap items-center justify-center gap-8 text-sm font-semibold"
+            className="text-primary-foreground/80 mt-12 flex flex-wrap items-center justify-center gap-4 gap-y-2 text-sm font-semibold sm:gap-8 sm:gap-y-4"
           >
             <div className="flex items-center gap-2">
               <div className="bg-primary-foreground h-2 w-2 rounded-full" />

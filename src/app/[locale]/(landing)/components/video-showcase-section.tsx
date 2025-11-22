@@ -113,13 +113,13 @@ export default function VideoShowcaseSection() {
                   <m.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-primary flex h-24 w-24 items-center justify-center rounded-full shadow-2xl transition-all hover:shadow-[0_0_40px_rgba(212,175,55,0.6)]"
+                    className="bg-primary flex h-16 w-16 items-center justify-center rounded-full shadow-2xl transition-all hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] md:h-24 md:w-24"
                     style={{ pointerEvents: "auto" }}
                     onClick={() => {
                       videoRef.current?.play();
                     }}
                   >
-                    <Play className="text-primary-foreground ms-1 h-12 w-12 fill-current" />
+                    <Play className="text-primary-foreground ms-1 h-8 w-8 fill-current md:h-12 md:w-12" />
                   </m.button>
                 </m.div>
               )}
