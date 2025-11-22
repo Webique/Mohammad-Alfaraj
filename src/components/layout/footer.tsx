@@ -26,45 +26,60 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="from-secondary via-secondary/95 to-secondary text-secondary-foreground relative bg-gradient-to-br">
-      {/* Decorative top wave */}
+    <footer className="from-secondary via-secondary/98 to-secondary text-secondary-foreground bg-linear-to-br relative">
+      {/* Enhanced decorative top wave */}
       <div className="leading-0 absolute left-0 top-0 w-full overflow-hidden">
         <svg
-          className="relative block h-12 w-full"
+          className="relative block h-20 w-full md:h-24"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className="fill-background"
+            className="fill-muted"
           />
         </svg>
       </div>
 
-      {/* Animated background elements */}
-      <div className="pointer-events-none absolute inset-0 opacity-5">
+      {/* Enhanced animated background elements */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.07]">
         <m.div
           animate={{
             scale: [1, 1.2, 1],
-            rotate: [0, 180, 360]
+            rotate: [0, 180, 360],
+            x: [0, 50, 0],
+            y: [0, 30, 0]
           }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
           className="bg-primary absolute right-0 top-1/4 h-96 w-96 rounded-full blur-3xl"
         />
         <m.div
           animate={{
             scale: [1, 1.3, 1],
-            rotate: [360, 180, 0]
+            rotate: [360, 180, 0],
+            x: [0, -50, 0],
+            y: [0, -30, 0]
           }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
           className="bg-primary absolute bottom-0 left-0 h-96 w-96 rounded-full blur-3xl"
         />
       </div>
 
-      <div className="container relative mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      {/* Subtle grid pattern */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.02]">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)`,
+            backgroundSize: "50px 50px"
+          }}
+        />
+      </div>
+
+      <div className="container relative mx-auto px-4 py-20 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
           {/* Company Info */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
@@ -88,25 +103,28 @@ const Footer = () => {
               <h4 className="text-sm font-bold uppercase tracking-wider">
                 {t("connectWithUs")}
               </h4>
-              <div className="flex gap-3">
+              <div className="flex gap-5">
                 {[
                   {
                     icon: Instagram,
                     href: siteConfig.links.instagram,
                     label: "Instagram",
-                    color: "from-purple-600 to-pink-600"
+                    color: "from-purple-600 to-pink-600",
+                    shadow: "hover:shadow-[0_15px_50px_rgba(168,85,247,0.5)]"
                   },
                   {
                     icon: Linkedin,
                     href: siteConfig.links.linkedin,
                     label: "LinkedIn",
-                    color: "from-blue-600 to-blue-700"
+                    color: "from-blue-600 to-blue-700",
+                    shadow: "hover:shadow-[0_15px_50px_rgba(29,78,216,0.5)]"
                   },
                   {
                     icon: Phone,
                     href: siteConfig.links.whatsapp,
                     label: "WhatsApp",
-                    color: "from-green-600 to-green-700"
+                    color: "from-green-600 to-green-700",
+                    shadow: "hover:shadow-[0_15px_50px_rgba(21,128,61,0.5)]"
                   }
                 ].map((social) => {
                   const Icon = social.icon;
@@ -116,12 +134,13 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${social.color} transition-all hover:scale-110 hover:shadow-lg`}
+                      className={`bg-linear-to-br group relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl ${social.color} shadow-2xl transition-all ${social.shadow}`}
                       aria-label={social.label}
-                      whileHover={{ y: -3 }}
+                      whileHover={{ y: -10, scale: 1.2, rotate: 8 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Icon className="relative z-10 h-5 w-5 text-white" />
+                      <Icon className="relative z-10 h-9 w-9 text-white transition-transform group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-white opacity-0 transition-opacity group-hover:opacity-20" />
                     </m.a>
                   );
                 })}
@@ -251,11 +270,14 @@ const Footer = () => {
               </div>
 
               {/* Certificate Badge */}
-              <div className="border-primary/20 bg-primary/5 mt-6 rounded-xl border p-4">
-                <div className="flex items-center gap-3">
-                  <div className="bg-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+              <m.div
+                whileHover={{ scale: 1.05 }}
+                className="border-primary/40 bg-primary/15 mt-10 rounded-3xl border-2 p-6 shadow-2xl"
+              >
+                <div className="flex items-center gap-5">
+                  <div className="bg-primary flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl shadow-lg">
                     <svg
-                      className="text-primary-foreground h-5 w-5"
+                      className="text-primary-foreground h-8 w-8"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -263,21 +285,21 @@ const Footer = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={2.5}
                         d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                       />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-muted-foreground text-xs">
+                    <div className="text-muted-foreground text-sm font-black uppercase tracking-wider">
                       GACA Certified
                     </div>
-                    <div className="text-primary text-sm font-semibold">
+                    <div className="text-primary text-xl font-black">
                       {siteConfig.certificate}
                     </div>
                   </div>
                 </div>
-              </div>
+              </m.div>
             </div>
           </m.div>
         </div>
