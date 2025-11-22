@@ -20,6 +20,29 @@
       "experienceBadge": "Years Experience",
       "imageAlt": "Professional Drone Photography by Mohammed Al Faraj"
     },
+    "features": {
+      "badge": "Premium Features",
+      "title": "Professional Equipment & Expertise",
+      "subtitle": "Cutting-Edge Technology Meets Creative Vision",
+      "description": "We use cutting-edge drone technology and professional camera systems to deliver stunning aerial imagery that exceeds industry standards. Every project benefits from our advanced equipment and years of experience.",
+      "commitment": "Our commitment to excellence means investing in the latest technology and maintaining the highest operational standards to ensure your project receives the quality it deserves.",
+      "qualityBadge": "Cinema Quality",
+      "list": {
+        "cinema": "4K/5.1K Cinema-Quality Imaging",
+        "colorProfiles": "D-log & M-log Color Profiles",
+        "streaming": "Live Streaming Capability",
+        "rcPro": "RC Pro with HDMI Output",
+        "security": "High-Security Site Clearance",
+        "editing": "Professional Editing Suite",
+        "turnaround": "Fast 24-48hr Turnaround",
+        "insured": "Fully Insured Operations"
+      },
+      "imageAlt": {
+        "equipment": "Professional Drone Equipment",
+        "aerial": "Aerial Photography View",
+        "professional": "Professional Cinematography"
+      }
+    },
     "services": {
       "title": "Our Services",
       "subtitle": "Comprehensive Aerial Solutions",

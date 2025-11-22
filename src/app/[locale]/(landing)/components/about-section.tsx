@@ -107,7 +107,7 @@ export default function AboutSection() {
             <div className="relative">
               <div className="rounded-4xl relative h-[400px] overflow-hidden shadow-2xl lg:h-[500px]">
                 <ExportedImage
-                  src="/images/DJI_20240227182720_0289_D-Enhanced-NR.jpg"
+                  src="/images/about.jpg"
                   alt={t("imageAlt")}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
