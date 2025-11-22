@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 import Email from "@/assets/icons/email.svg";
 import Instagram from "@/assets/icons/instagram.svg";
-import LinkedIn from "@/assets/icons/linkedIn.svg";
+import LinkedIn from "@/assets/icons/linkedin.svg";
 import Logo from "@/components/ui/logo";
 import { siteConfig } from "@/config/site";
 
