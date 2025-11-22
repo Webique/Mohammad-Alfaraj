@@ -4,6 +4,8 @@ import type { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 
+import VideoShowcaseSection from "@/app/[locale]/(landing)/components/video-showcase-section";
+
 import AboutSection from "./components/about-section";
 import ClientsSection from "./components/clients-section";
 import ContactSection from "./components/contact-section";
@@ -32,6 +34,7 @@ export default function IndexPage({ params }: PageProps) {
       <ClientsSection />
       <WhyChooseSection />
       <GallerySection />
+      <VideoShowcaseSection />
       <CTABanner />
       <CoverageSection />
       <ContactSection />
