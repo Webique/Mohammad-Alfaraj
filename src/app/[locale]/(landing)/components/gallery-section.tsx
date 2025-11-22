@@ -174,7 +174,7 @@ export default function GallerySection() {
           container: { style: { top: "16px", insetInlineStart: "16px" } }
         }}
         styles={{
-          container: { backgroundColor: "rgba(0, 0, 0, 0.95)" }
+          container: { backgroundColor: "rgba(0, 0, 0, 0.6)" }
         }}
       />
     </section>
