@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Menu, Phone, X } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 import * as React from "react";
@@ -15,52 +15,60 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const t = useTranslations("Header");
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [scrolled, setScrolled] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const navItems = [
     { label: t("nav.home"), href: "/" },
     { label: t("nav.about"), href: "#about" },
-    { label: t("nav.services"), href: "#services" },
-    { label: t("nav.portfolio"), href: "#portfolio" },
-    { label: t("nav.contact"), href: "#contact" }
+    { label: t("nav.myservices"), href: "#services" },
+    { label: t("nav.myportfolio"), href: "#portfolio" },
+    { label: t("nav.contactme"), href: "#cta" }
   ];
 
   return (
-    <m.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled
-          ? "border-border/50 bg-background/98 border-b shadow-2xl shadow-black/10 backdrop-blur-3xl"
-          : "bg-transparent"
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "bg-white/95 shadow-sm backdrop-blur-xl",
+        "md:shadow-none",
+        isScrolled
+          ? "md:bg-white/95 md:shadow-sm md:backdrop-blur-xl"
+          : "md:bg-transparent md:backdrop-blur-sm"
       )}
     >
-      <div className="layout">
-        <div className="flex h-20 items-center justify-between lg:h-24">
-          {/* Logo with enhanced animation */}
+      {/* Main Header */}
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between lg:h-24">
+          {/* Logo */}
           <m.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="relative z-10"
+            className="flex h-full items-center gap-3"
           >
-            <Link href="/" className="group flex items-center gap-3">
-              <Logo className="transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.8)]" />
-            </Link>
+            <div
+              className={cn(
+                "transition-all duration-300",
+                isScrolled ? "" : "md:brightness-0 md:invert"
+              )}
+            >
+              <Logo />
+            </div>
           </m.div>
 
-          {/* Desktop Navigation with enhanced styling */}
-          <nav className="hidden items-center gap-1 lg:flex">
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-8 lg:flex">
             {navItems.map((item, index) => (
               <m.div
                 key={index}
@@ -70,114 +78,143 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="hover:text-primary group relative px-6 py-3 font-semibold transition-all duration-300"
+                  className={cn(
+                    "hover:text-primary relative text-lg font-semibold transition-colors",
+                    isScrolled
+                      ? "text-gray-700"
+                      : "text-gray-700 md:text-white",
+                    "before:bg-primary before:absolute before:-bottom-1 before:start-0 before:h-0.5 before:w-0",
+                    "before:transition-all before:duration-300 hover:before:w-full"
+                  )}
                 >
-                  <span className="relative z-10">{item.label}</span>
-                  <span className="bg-primary/10 absolute inset-0 scale-0 rounded-xl transition-transform duration-300 group-hover:scale-100" />
-                  <span className="bg-primary absolute bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-2/3" />
+                  {item.label}
                 </Link>
               </m.div>
             ))}
           </nav>
 
-          {/* CTA & Language Switcher with enhanced design */}
+          {/* CTA  */}
           <m.div
-            className="hidden items-center gap-5 lg:flex"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="hidden items-center space-x-3 lg:flex"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <LocaleSwitcher isTop={false} />
+            <LocaleSwitcher isTop={!isScrolled} />
 
-            <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-primary/80 shadow-primary/50 group relative overflow-hidden rounded-full px-10 py-7 text-lg font-black shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-2xl"
-              asChild
-            >
-              <Link
-                href={siteConfig.links.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="flex items-center">
+              <Button
+                className="bg-primary shadow-primary/20 hover:shadow-primary/30 hover:bg-primary/90 hidden h-auto items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-black shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl has-[>svg]:px-8 lg:flex"
+                asChild
               >
-                <Phone className="mr-2 h-6 w-6 transition-transform group-hover:rotate-12" />
-                <span className="relative z-10">{t("cta")}</span>
-                <div className="bg-linear-to-r absolute inset-0 z-0 from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </Link>
-            </Button>
+                <Link
+                  href={siteConfig.links.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="size-5" />
+                  {t("cta")}
+                </Link>
+              </Button>
+            </div>
           </m.div>
 
-          {/* Mobile Menu Button with enhanced design */}
-          <div className="flex items-center gap-3 lg:hidden">
-            <LocaleSwitcher className="w-auto" isTop={false} />
-
-            <button
-              className="hover:bg-primary/15 relative z-10 rounded-xl p-3 transition-all duration-300 hover:scale-110"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+          {/* Mobile Menu Button */}
+          <div className="flex items-center space-x-2 lg:hidden">
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="flex items-center"
             >
-              {isMenuOpen ? (
-                <X className="text-primary h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
+              <LocaleSwitcher className="w-auto" isTop={false} />
+
+              <button
+                className="text-foreground hover:bg-muted rounded-md p-2 transition-all duration-300 hover:scale-105"
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+              >
+                <div className="space-y-1.5">
+                  <m.div
+                    animate={
+                      isMenuOpen ? { rotate: 45, y: 9 } : { rotate: 0, y: 0 }
+                    }
+                    transition={{ duration: 0.3 }}
+                    className="h-0.5 w-6 bg-current"
+                  />
+                  <m.div
+                    animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="h-0.5 w-6 bg-current"
+                  />
+                  <m.div
+                    animate={
+                      isMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
+                    }
+                    transition={{ duration: 0.3 }}
+                    className="h-0.5 w-6 bg-current"
+                  />
+                </div>
+              </button>
+            </m.div>
           </div>
         </div>
 
-        {/* Enhanced Mobile Menu */}
+        {/* Mobile Menu */}
         <m.div
           initial={false}
           animate={{
             height: isMenuOpen ? "auto" : 0,
             opacity: isMenuOpen ? 1 : 0
           }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.3 }}
           className="overflow-hidden lg:hidden"
         >
-          <nav className="border-border space-y-2 border-t py-6">
-            {navItems.map((item, index) => (
-              <m.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 * index, duration: 0.3 }}
-              >
-                <Link
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:bg-primary/15 hover:text-primary group block rounded-xl px-5 py-4 font-semibold transition-all duration-300"
+          <nav className="space-y-4 border-t border-gray-200 py-4">
+            <div className="space-y-4 px-4">
+              {navItems.map((item, index) => (
+                <m.div
+                  key={index}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index, duration: 0.4 }}
                 >
-                  <span className="flex items-center justify-between">
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary block rounded-lg px-4 py-3 text-base font-medium transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2"
+                  >
                     {item.label}
-                    <ArrowRight className="h-4 w-4 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
-                  </span>
-                </Link>
-              </m.div>
-            ))}
+                  </Link>
+                </m.div>
+              ))}
 
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.3 }}
-              className="pt-4"
-            >
-              <Button
-                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/50 w-full rounded-full py-6 text-lg font-black shadow-xl transition-all hover:scale-[1.03] hover:shadow-2xl"
-                asChild
+              {/* CTA in Mobile Menu */}
+              <m.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+                className="border-t pt-4"
               >
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={siteConfig.links.whatsapp}
-                  onClick={() => setIsMenuOpen(false)}
+                <Button
+                  className="bg-primary h-auto w-full items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl has-[>svg]:px-6"
+                  asChild
                 >
-                  <Phone className="mr-2 h-6 w-6" />
-                  {t("cta")}
-                </a>
-              </Button>
-            </m.div>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={siteConfig.links.whatsapp}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <MessageCircle className="size-4" />
+                    {t("cta")}
+                  </a>
+                </Button>
+              </m.div>
+            </div>
           </nav>
         </m.div>
       </div>
-    </m.header>
+    </header>
   );
 }

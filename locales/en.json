@@ -43,9 +43,7 @@
       "about": "About",
       "services": "Services",
       "myservices": "My Services",
-      "portfolio": "Portfolio",
-      "videos": "Videos",
-      "contact": "Contact",
+      "myportfolio": "My Portfolio",
       "contactme": "Contact Me"
     },
     "cta": "Book Now",
