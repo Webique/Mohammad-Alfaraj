@@ -40,10 +40,10 @@ export default function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        "bg-white/95 shadow-sm backdrop-blur-xl",
-        "lg:shadow-none",
+        "bg-background/95 border-border/50 border-b backdrop-blur-xl",
+        "lg:border-none",
         isScrolled
-          ? "lg:bg-white/95 lg:shadow-sm lg:backdrop-blur-xl"
+          ? "lg:bg-background/95 lg:border-border/50 lg:border-b lg:backdrop-blur-xl"
           : "lg:bg-transparent lg:backdrop-blur-sm"
       )}
     >
@@ -57,14 +57,12 @@ export default function Header() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex h-full items-center gap-3"
           >
-            <div
-              className={cn(
-                "transition-all duration-300",
-                isScrolled ? "" : "lg:brightness-0 lg:invert"
+            <Logo
+              imgClassName={cn(
+                "brightness-0 invert filter lg:brightness-100 lg:invert-0",
+                isScrolled && "lg:brightness-0 lg:invert"
               )}
-            >
-              <Logo />
-            </div>
+            />
           </m.div>
 
           {/* Desktop Navigation */}
@@ -80,9 +78,7 @@ export default function Header() {
                   href={item.href}
                   className={cn(
                     "hover:text-primary relative text-lg font-semibold transition-colors",
-                    isScrolled
-                      ? "text-gray-700"
-                      : "text-gray-700 lg:text-white",
+                    "text-foreground/80 hover:text-foreground",
                     "before:bg-primary before:absolute before:-bottom-1 before:start-0 before:h-0.5 before:w-0",
                     "before:transition-all before:duration-300 hover:before:w-full"
                   )}
@@ -100,7 +96,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <LocaleSwitcher isTop={!isScrolled} />
+            <LocaleSwitcher isTop={isScrolled} />
 
             <div className="flex items-center">
               <Button
@@ -170,7 +166,7 @@ export default function Header() {
           transition={{ duration: 0.3 }}
           className="overflow-hidden lg:hidden"
         >
-          <nav className="space-y-4 border-t border-gray-200 py-4">
+          <nav className="border-border space-y-4 border-t py-4">
             <div className="space-y-4 px-4">
               {navItems.map((item, index) => (
                 <m.div
