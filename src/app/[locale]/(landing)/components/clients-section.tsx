@@ -79,6 +79,7 @@ export default function ClientsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-white py-3"
         >
           <Carousel
             dir={dir === "rtl" ? "rtl" : "ltr"}
@@ -102,16 +103,14 @@ export default function ClientsSection() {
                   key={index}
                   className="flex basis-auto items-center px-1 ps-3"
                 >
-                  <div className="group rounded-xl bg-white/95 p-4 shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl">
-                    <ExportedImage
-                      src={client.src}
-                      alt={`Client ${index + 1}`}
-                      width={client.width}
-                      height={client.height}
-                      placeholder="empty"
-                      className="h-auto w-full object-contain transition-all duration-300"
-                    />
-                  </div>
+                  <ExportedImage
+                    src={client.src}
+                    alt={`Client ${index + 1}`}
+                    width={client.width}
+                    height={client.height}
+                    placeholder="empty"
+                    className="h-auto w-full object-contain transition-all duration-300"
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>
