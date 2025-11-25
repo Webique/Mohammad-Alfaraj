@@ -1,6 +1,5 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
 import * as m from "motion/react-m";
 import ExportedImage from "next-image-export-optimizer";
 import { useTranslations } from "next-intl";
@@ -55,7 +54,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
-          <m.div
+          {/* <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -66,7 +65,7 @@ export default function AboutSection() {
             <span className="text-primary text-sm font-bold uppercase tracking-wider">
               {t("badge")}
             </span>
-          </m.div>
+          </m.div> */}
           <h2 className="mb-5 text-4xl font-black md:text-5xl lg:text-6xl">
             {t("title")}
           </h2>

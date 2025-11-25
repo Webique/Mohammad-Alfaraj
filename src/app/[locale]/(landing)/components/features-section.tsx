@@ -12,11 +12,8 @@ export default function FeaturesSection() {
     t("list.cinema"),
     t("list.colorProfiles"),
     t("list.streaming"),
-    t("list.rcPro"),
-    t("list.security"),
     t("list.editing"),
-    t("list.turnaround"),
-    t("list.insured")
+    t("list.turnaround")
   ];
 
   return (
