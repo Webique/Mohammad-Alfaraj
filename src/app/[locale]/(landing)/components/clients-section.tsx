@@ -31,7 +31,7 @@ export default function ClientsSection() {
   ];
 
   return (
-    <section className="bg-background relative overflow-hidden py-24">
+    <section className="from-background/80 to-background bg-linear-to-b relative overflow-hidden py-24">
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0">
         <m.div
@@ -100,16 +100,18 @@ export default function ClientsSection() {
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <CarouselItem
                   key={index}
-                  className="flex basis-auto items-center px-2 ps-3"
+                  className="flex basis-auto items-center px-1 ps-3"
                 >
-                  <ExportedImage
-                    src={client.src}
-                    alt={`Client ${index + 1}`}
-                    width={client.width}
-                    height={client.height}
-                    placeholder="empty"
-                    className="h-auto w-full object-contain transition-opacity duration-300"
-                  />
+                  <div className="group rounded-xl bg-white/95 p-4 shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl">
+                    <ExportedImage
+                      src={client.src}
+                      alt={`Client ${index + 1}`}
+                      width={client.width}
+                      height={client.height}
+                      placeholder="empty"
+                      className="h-auto w-full object-contain transition-all duration-300"
+                    />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
