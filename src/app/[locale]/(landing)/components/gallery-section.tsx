@@ -16,7 +16,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 const images = Array.from(
-  { length: 33 },
+  { length: 32 },
   (_, i) => `/images/portfolio/${i + 1}.jpg`
 );
 
