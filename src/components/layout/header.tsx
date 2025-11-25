@@ -57,12 +57,7 @@ export default function Header() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex h-full items-center gap-3"
           >
-            <Logo
-              imgClassName={cn(
-                "brightness-0 invert filter lg:brightness-100 lg:invert-0",
-                isScrolled && "lg:brightness-0 lg:invert"
-              )}
-            />
+            <Logo imgClassName="brightness-0 invert filter" />
           </m.div>
 
           {/* Desktop Navigation */}
@@ -77,8 +72,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "hover:text-primary relative text-lg font-semibold transition-colors",
-                    "text-foreground/80 hover:text-foreground",
+                    "hover:text-primary relative text-lg font-semibold text-white transition-colors",
                     "before:bg-primary before:absolute before:-bottom-1 before:start-0 before:h-0.5 before:w-0",
                     "before:transition-all before:duration-300 hover:before:w-full"
                   )}

@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 
 export default function LocaleSwitcher({
   className,
-  isTop
+  isTop = false
 }: {
   className?: string;
-  isTop: boolean;
+  isTop?: boolean;
 }) {
   const locale = useLocale();
   const pathname = usePathname?.();
@@ -23,7 +23,7 @@ export default function LocaleSwitcher({
         href={pathname}
         locale={locale === "en" ? "ar" : "en"}
         className={cn(
-          "inline-flex w-full items-center justify-between rounded-full px-3 py-2 text-xs font-semibold text-white focus:outline-none sm:text-sm lg:text-black",
+          "inline-flex w-full items-center justify-between rounded-full px-3 py-2 text-xs font-semibold text-white focus:outline-none sm:text-sm lg:text-white",
           isTop && "lg:text-white"
         )}
       >
