@@ -31,7 +31,7 @@ export default function ServicesSection() {
       icon: Building2,
       title: t("items.industrial.title"),
       description: t("items.industrial.description"),
-      image: "/images/portfolio/31.jpg"
+      image: "/images/portfolio/33.jpg"
     },
     {
       icon: HardHat,
