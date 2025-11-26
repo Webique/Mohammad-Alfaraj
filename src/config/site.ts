@@ -7,7 +7,7 @@ export const siteConfig = {
 
   support: {
     phone: "+966-554 987612",
-    email: "mfra2002@hotmail.com",
+    email: "drone.videography2030@gmail.com",
     whatsapp: "+966554987612"
   },
 
