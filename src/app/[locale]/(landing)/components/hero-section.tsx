@@ -3,6 +3,7 @@
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
+import ExportedImage from "next-image-export-optimizer";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -52,6 +53,23 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-6xl"
         >
+          {/* Vision 2030 badge */}
+          <m.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="bg-white/10 mx-auto mb-6 w-fit rounded-2xl px-6 py-3 backdrop-blur-md shadow-2xl md:mb-8"
+          >
+            <ExportedImage
+              src="/images/2030.png"
+              alt="Vision 2030 logo"
+              width={360}
+              height={120}
+              className="max-h-20 w-auto object-contain"
+              priority
+            />
+          </m.div>
+
           {/* PREMIUM Badge */}
           <m.div
             initial={{ opacity: 0, scale: 0.8 }}
