@@ -15,10 +15,10 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
-const images = Array.from(
-  { length: 32 },
-  (_, i) => `/images/portfolio/${i + 1}.jpg`
-);
+const missingImages = new Set([23]);
+const images = Array.from({ length: 32 }, (_, i) => i + 1)
+  .filter((index) => !missingImages.has(index))
+  .map((index) => `/images/portfolio/${index}.jpg`);
 
 export default function GallerySection() {
   const t = useTranslations("IndexPage.gallery");
